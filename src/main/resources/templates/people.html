@@ -24,6 +24,9 @@
 <a href="/admin/addUser">
     <input type="submit" value="Добавить пользователя">
 </a>
+<form th:action="@{/logout}" th:method="GET" >
+    <button type="submit">Logout</button>
+</form>
 <div>
     <table>
         <tr>
@@ -38,7 +41,7 @@
             <th>Действие</th>
         </tr>
         <tr th:each="user : ${users}">
-            <td><a th:href="@{/user(id=${user.id})}" th:text="${user.id}">ID</a></td>v
+            <td><a th:href="@{/admin/user(id=${user.id})}" th:text="${user.id}">ID</a></td>v
             <td th:text="${user.getUsername()}">Username</td>
             <td th:text="${user.getPassword()}">Password</td>
             <td th:text="${user.getRoles()}">Roles</td>
@@ -54,7 +57,7 @@
                 </form>
             </td>
             <td th:align=center>
-                <form th:action="@{/admin/user(id=${user.id})}" th:method="get">
+                <form th:action="@{/admin/update(id=${user.id})}" th:method="get">
                     <input type="hidden" name="id" th:value="${user.getId()}"/>
                     <button type="submit">Изменить</button>
                 </form>

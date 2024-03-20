@@ -8,23 +8,29 @@
 <body>
 <h3>Пользователь# <span th:text="${user.id}"/></h3>
 
-<table border="2">
+<table border="1">
     <br/>
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>Password</th>
+        <th>Roles</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>Email</th>
     </tr>
     <br/>
 
-    <tr th:each="u : ${user}">
-        <td th:text="${u.getId()}"></td>
-        <td th:text="${u.getUserName()}"></td>
-        <td th:text="${u.getPassword()}"></td>
-        <td th:text="${u.getUsername()}"></td>
-        <td th:text="${u.getUsername()}"></td>
-        <td th:text="${u.getUsername()}"></td>
-        <td th:text="${u.getUsername()}"></td>
+    <tr>
+        <td th:text="${user.getId}"></td>
+        <td th:text="${user.getUsername()}"></td>
+        <td th:text="${user.getPassword()}"></td>
+        <td th:text="${user.getRoles()}"></td>
+        <td th:text="${user.getFirstName()}"></td>
+        <td th:text="${user.getLastName()}"></td>
+        <td th:text="${user.getAge()}"></td>
+        <td th:text="${user.getEmail()}"></td>
     </tr>
 
 </table>

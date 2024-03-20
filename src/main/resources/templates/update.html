@@ -10,34 +10,34 @@
 
 <form th:method="put" th:action="@{/admin/update(id=${user.getId()})}" th:object="${user}">
     <label for="userName"> Логин: </label>
-    <input type="text" th:field="*{user.userName}" id="userName"/>
+    <input type="text" th:field="*{username}" id="userName"/>
     <br/>
     <br/>    <label for="password"> Пароль: </label>
-    <input type="text" th:field="*{user.password}" id="password"/>
+    <input type="text" th:field="*{password}" id="password"/>
     <br/>
     <br/>
     <label for="firstName"> Имя: </label>
-    <input type="text" th:field="*{user.firstName}" id="firstName"/>
+    <input type="text" th:field="*{firstName}" id="firstName"/>
     <br/>
     <br/>
     <label for="lastName"> Фамилия: </label>
-    <input type="text" th:field="*{user.lastName}" id="lastName"/>
+    <input type="text" th:field="*{lastName}" id="lastName"/>
     <br/>
     <br/>
     <label for="age"> Возраст: </label>
-    <input type="number" th:field="*{user.age}" id="age"/>
+    <input type="number" th:field="*{age}" id="age"/>
     <br/>
     <br/>
     <label for="email"> Email: </label>
-    <input type="text" th:field="*{user.email}" id="email"/>
+    <input type="text" th:field="*{email}" id="email"/>
     <br/>
     <br/>
     <label>Роль:
         <input type="checkbox" name="roles"
-               th:each="roles : ${role}"
+               th:each="roles : ${allRoles}"
                th:value="${roles.getId()}"
                th:text="${roles.getName().replace('ROLE_', '') + ' '}"
-               th:field="*{user.roles}"
+               th:field="*{roles}"
         />
     </label>
     <br/>

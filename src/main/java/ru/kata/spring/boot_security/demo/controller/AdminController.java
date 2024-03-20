@@ -49,7 +49,6 @@ public class AdminController {
     //------------------------------------------------------------------------------------------------------------------
     @GetMapping("/admin/update")
     public String updateUser(@RequestParam(name = "id") Long id, Model model){
-        //User user = userService.getById(id);
         model.addAttribute("user", userService.getById(id));
         model.addAttribute("allRoles", roleService.getAll());
         return "update";
@@ -61,7 +60,7 @@ public class AdminController {
         return "redirect:/admin";
     }
     //------------------------------------------------------------------------------------------------------------------
-    @DeleteMapping("/admin/delete_user")                                                                         //работает
+    @DeleteMapping("/admin/delete_user")
     public String deleteUserById(@RequestParam(name = "id") Long id) {
         userService.getDelete(id);
         return "redirect:/admin";
